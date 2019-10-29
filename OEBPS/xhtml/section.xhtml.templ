@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:xml="http://www.w3.org/XML/1998/namespace"
+  xml:lang="ja"
+  lang="ja">
+  <head>
+    <title>{{title}}</title>
+    <link href="../style/book-style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body class="p-text vrtl">
+    <div class="main">
+      <a id="chapter_top"></a>
+      <a id="section_top"></a>
+      <div class="maegaki">
+	{{preface}}
+      </div>
+      <p class="chapter-title">{{title}}</p>
+      <h2 class="naka-midashi">{{headline}}</h2><p> </p><br/>
+      {{#body}}
+      {{{paragraph}}}
+      {{/body}}
+      <div class="maegaki">
+	{{postscript}}
+      </div>
+    </div>
+  </body>
+</html>

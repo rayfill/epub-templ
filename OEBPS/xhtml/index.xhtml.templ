@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:xml="http://www.w3.org/XML/1998/namespace"
+  xml:lang="ja"
+  lang="ja"
+  class="vrtl" >
+  <head>
+    <title>目次</title>
+    <link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+  </head>
+
+  <body class="p-toc">
+    <div class="main">
+      <h1 class="mokuji-midashi">目次</h1>
+      {{#contents}}
+      {{#header}}
+      <h{{level}}>{{name}}</h{{level}}>
+      {{/header}}
+      {{#sections}}
+      <p><a href="{{section}}">{{title}}</a></p>
+      {{/sections}}
+      {{/contents}}
+    </div>
+  </body>
+</html>
+
