@@ -14,17 +14,13 @@
     <div class="main">
       <a id="chapter_top"></a>
       <a id="section_top"></a>
-      <div class="maegaki">
-	{{preface}}
-      </div>
-      <p class="chapter-title">{{title}}</p>
+      {{#preface}}<div class="maegaki">{{preface}}</div>{{/preface}}
+      {{#chapter_title}}<p class="chapter-title">{{chapter_title}}</p>{{/chapter_title}}
       <h2 class="naka-midashi">{{headline}}</h2><p> </p><br/>
       {{#body}}
       {{{paragraph}}}
       {{/body}}
-      <div class="maegaki">
-	{{postscript}}
-      </div>
+      {{#postscript}}<div class="maegaki">{{postscript}}</div>{{/postscript}}
     </div>
   </body>
 </html>
