@@ -5,17 +5,22 @@
   xmlns:epub="http://www.idpf.org/2007/ops"
   xml:lang="ja"
   lang="ja">
-  <head> 
-    <title>{{title}}</title>
+  <head>
+    <title>{{book_title}}</title>
   </head>
   <body>
     <nav epub:type="toc" id="toc">
       <h1>目次</h1>
       <ol>
-	<li><a href="index.xhtml">目次</a></li>
-	{{#sections}}
-	<li><a href="{{section}}">{{title}}</a></li>
-	{{/sections}}
+	    <li><a href="index.xhtml">目次</a></li>
+        {{#chapters}}
+        {{#chapter}}
+          <h{{chapter_level}}>{{chapter_name}}</h{{chapter_level}}>
+        {{/chapter}}
+	    {{#sections}}
+	    <li><a href="{{section_id}}.xhtml">{{section_title}}</a></li>
+	    {{/sections}}
+        {{/chapters}}
 	<li><a href="info.xhtml">書籍情報</a></li>
       </ol>
     </nav>

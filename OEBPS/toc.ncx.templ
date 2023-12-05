@@ -2,18 +2,18 @@
 <!DOCTYPE ncx PUBLIC "-//NISO//DTD ncx 2005-1//EN" "http://www.daisy.org/z3986/2005/ncx-2005-1.dtd">
 <ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="ja" dir="rtl">
   <head>
-    <meta name="dtb:uid" content="{{link}}" />
+    <meta name="dtb:uid" content="{{book_link}}" />
   </head>
   <docTitle>
-    <text>{{title}}</text>
+    <text>{{book_title}}</text>
   </docTitle>
   <navMap>
     {{#sections}}
     <navPoint id="navPoint-{{index}}" playOrder="{{index}}">
       <navLabel>
-        <text>{{title}}</text>
+        <text>{{section_title}}</text>
       </navLabel>
-      <content src="xhtml/{{section}}" />
+      <content src="xhtml/{{section_id}}.xhtml" />
     </navPoint>
     {{/sections}}
   </navMap>

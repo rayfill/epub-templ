@@ -15,12 +15,12 @@
     <div class="main">
       <h1 class="mokuji-midashi">目次</h1>
       {{#contents}}
-      {{#header}}
-      <h{{level}}>{{chapter_name}}</h{{level}}>
-      {{/header}}
-      {{#sections}}
-      <p><a href="{{section}}">{{section_title}}</a></p>
-      {{/sections}}
+        {{#chapter}}
+          <h{{chapter_level}}>{{chapter_name}}</h{{chapter_level}}>
+        {{/chapter}}
+        {{#sections}}
+          <p><a href="{{section_id}}.xhtml">{{section_title}}</a></p>
+        {{/sections}}
       {{/contents}}
     </div>
   </body>

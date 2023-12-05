@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<package 
+<package
   xmlns="http://www.idpf.org/2007/opf"
   unique-identifier="BookId"
   version="3.0"
   xml:lang="ja"
   prefix="ebpaj: http://www.ebpaj.jp/">
   <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
-    <dc:identifier id="BookId">{{link}}</dc:identifier>
+    <dc:identifier id="BookId">{{book_link}}</dc:identifier>
     <dc:language>ja</dc:language>
-    <dc:title>{{title}}</dc:title>
+    <dc:title>{{book_title}}</dc:title>
     <dc:creator id="creator01">{{author}}</dc:creator>
-    <meta property="ebpaj:guide-version">1.1.2</meta> 
+    <meta property="ebpaj:guide-version">1.1.2</meta>
     <meta refines="#creator01" property="role" scheme="marc:relators">aut</meta>
-    <meta property="dcterms:modified">{{modified_time}}</meta>
+    <meta property="dcterms:modified">{{book_modified_time}}</meta>
     <meta name="cover" content="cover.jpg" />
   </metadata>
   <manifest>
@@ -25,12 +25,12 @@
     <item href="xhtml/info.xhtml" id="info.xhtml" media-type="application/xhtml+xml" />
     <!-- section: section%04d.xhtml -->
     {{#sections}}
-    <item href="xhtml/{{section}}" id="{{section}}" media-type="application/xhtml+xml" />
+    <item href="xhtml/{{section_id}}.xhtml" id="{{section_id}}" media-type="application/xhtml+xml" />
     {{/sections}}
     <!-- image: img%04d_%04d.jpg -->
     <!-- media_type: image/jpeg -->
     {{#images}}
-    <item href="image/{{image}}" id="{{image}}" media-type="{{media_type}}" />
+    <item href="image/{{image_type}}" id="{{image_id}}" media-type="{{image_media_type}}" />
     {{/images}}
     <item href="xhtml/exp.xhtml" id="exp.xhtml" media-type="application/xhtml+xml" />
   </manifest>
@@ -39,7 +39,7 @@
     <itemref idref="exp.xhtml" />
     <itemref idref="index.xhtml" />
     {{#sections}}
-    <itemref idref="{{section}}" />
+    <itemref idref="{{section_id}}" />
     {{/sections}}
     <itemref idref="info.xhtml" linear="yes" />
   </spine>
