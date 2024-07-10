@@ -40,18 +40,17 @@ export function createContentOpf(context: EpubContext, input: ContentOpfInput) {
 
 export type NavChapter = {
   chapter?: {
-    chapter_level: number;
+    chapter_level: 1 | 2 | 3 | 4 | 5 | 6;
     chapter_name: string;
   };
   sections: Array<NavSection>
 }
 export type NavSection = {
-  section_id: string;
-  section_title: string;
+  chapter: Array<NavChapter>
 }
 export type NavInput = {
   book_title: string;
-  chapters: Array<NavSection>;
+  chapters: Array<NavChapter>;
 }
 export function createNav(context: EpubContext, input: NavInput) {
   return context.templates.nav.render(input);
@@ -113,7 +112,7 @@ export function createSection(context: EpubContext, input: SectionInput) {
   return replaceBR(context.templates.section.render(input));
 }
 
-export type ExpParagraph = string;
+export type ExpParagraph = { paragraph: string };
 export type ExpInput = {
   body: Array<ExpParagraph>;
 }
