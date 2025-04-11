@@ -19,18 +19,18 @@
     <item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml" />
     <item properties="nav" id="nav.xhtml" href="xhtml/nav.xhtml" media-type="application/xhtml+xml"/>
     <item properties="cover-image" id="cover.jpg" href="image/cover.jpg" media-type="image/jpeg"/>
-    <item href="style/book-style.css"     id="book-style.css" media-type="text/css" />
+    <item href="style/book-style.css" id="book-style.css" media-type="text/css" />
     <item href="xhtml/index.xhtml" id="index.xhtml" media-type="application/xhtml+xml" />
     <item href="xhtml/cover.xhtml" id="cover.xhtml" media-type="application/xhtml+xml" />
     <item href="xhtml/info.xhtml" id="info.xhtml" media-type="application/xhtml+xml" />
     <!-- section: section%04d.xhtml -->
     {{#sections}}
-    <item href="xhtml/{{section_id}}.xhtml" id="{{section_id}}" media-type="application/xhtml+xml" />
+    <item href="xhtml/{{section_id}}.xhtml" id="doc-{{section_id}}" media-type="application/xhtml+xml" />
     {{/sections}}
     <!-- image: img%04d_%04d.jpg -->
     <!-- media_type: image/jpeg -->
     {{#images}}
-    <item href="image/{{image_type}}" id="{{image_id}}" media-type="{{image_media_type}}" />
+    <item href="image/{{image_type}}" id="doc-{{image_id}}" media-type="{{image_media_type}}" />
     {{/images}}
     <item href="xhtml/exp.xhtml" id="exp.xhtml" media-type="application/xhtml+xml" />
   </manifest>
@@ -39,7 +39,7 @@
     <itemref idref="exp.xhtml" />
     <itemref idref="index.xhtml" />
     {{#sections}}
-    <itemref idref="{{section_id}}" />
+    <itemref idref="doc-{{section_id}}" />
     {{/sections}}
     <itemref idref="info.xhtml" linear="yes" />
   </spine>

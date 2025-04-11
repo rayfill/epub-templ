@@ -16,7 +16,9 @@
       <h1 class="mokuji-midashi">目次</h1>
       {{#contents}}
         {{#chapter}}
-          <h{{chapter_level}}>{{chapter_name}}</h{{chapter_level}}>
+          {{#chapter_level}}
+            <h{{chapter_level}}>{{chapter_name}}</h{{chapter_level}}>
+          {{/chapter_level}}
         {{/chapter}}
         {{#sections}}
           <p><a href="{{section_id}}.xhtml">{{section_title}}</a></p>

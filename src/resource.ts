@@ -43,7 +43,7 @@ export type NavChapter = {
     chapter_level: 1 | 2 | 3 | 4 | 5 | 6;
     chapter_name: string;
   };
-  sections: Array<NavSection>
+  sections: Array<IndexSection>
 }
 export type NavSection = {
   chapter: Array<NavChapter>
@@ -104,12 +104,21 @@ function replaceBR(txt: string) {
     return txt.replace(brPattern, '<br/>');
 }
 
-// const rubyPattern = new RegExp('</?rb>', 'gi');
-// function removeRuby(txt: string) {
-//     return txt.replace(rubyPattern, '');
-// }
+const rubyPattern = new RegExp('</?rb>', 'gi');
+function removeRb(txt: string) {
+    return txt.replace(rubyPattern, '');
+}
+
 export function createSection(context: EpubContext, input: SectionInput) {
-  return replaceBR(context.templates.section.render(input));
+  const customInput: SectionInput = {
+    ...input,
+    body: input.body.map((body): SectionBody => {
+      return {
+        paragraph: removeRb(body.paragraph)
+      }
+    })
+  }
+  return replaceBR(context.templates.section.render(customInput));
 }
 
 export type ExpParagraph = { paragraph: string };
