@@ -15,11 +15,16 @@
 	    <li><a href="index.xhtml">目次</a></li>
         {{#chapters}}
         {{#chapter}}
-	    <li><a >{{chapter_name}}</a></li>
+	    <li><span>{{chapter_name}}</span>
+          <ol>
         {{/chapter}}
 	    {{#sections}}
 	    <li><a href="{{section_id}}.xhtml">{{section_title}}</a></li>
 	    {{/sections}}
+        {{#chapter}}
+          </ol>
+        </li>
+        {{/chapter}}
         {{/chapters}}
 	    <li><a href="info.xhtml">書籍情報</a></li>
       </ol>
